@@ -22,6 +22,8 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+# Time-tracking api
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
@@ -30,6 +32,11 @@
 
 ```bash
 $ npm install
+```
+## Running database
+```bash
+$ cd mysql
+$ docker-compose up -d
 ```
 
 ## Running the app
@@ -56,6 +63,46 @@ $ npm run test:e2e
 
 # test coverage
 $ npm run test:cov
+```
+## Endpoints
+Time-tracker postman collection
+```
+./Time-tracker.postman_collection.json
+```
+### Authentication
+Log in
+```
+POST /auth/login
+```
+### Users
+Get current users
+```
+GET /users
+```
+Add user
+```
+POST /users
+```
+Delete user
+```
+DELETE /users/:id
+```
+### Timer
+Start timer
+```
+POST /timer/start
+```
+Stop timer
+```
+POST /timer/stop
+```
+Get user timer
+```
+GET /timer?title
+```
+Get user sum
+```
+GET /timer/sum
 ```
 
 ## Support
