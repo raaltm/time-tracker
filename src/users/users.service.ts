@@ -11,22 +11,26 @@ export class UsersService {
     @InjectRepository(User)
     private usersRepository: Repository<User>,
   ) {}
-  create(createUserDto: CreateUserDto) {
+  create(createUserDto: CreateUserDto): Promise<User> {
     const user = new User();
     user.username = createUserDto.username;
     user.password = createUserDto.password;
     return this.usersRepository.save(user);
   }
 
-  findAll() {
+  findAll(): Promise<User[]> {
     return this.usersRepository.find();
   }
 
-  findOne(id: number) {
+  findOne(id: number): Promise<User | null> {
     return this.usersRepository.findOneBy({ id: id });
   }
 
-  update(user: User, updateUserDto: UpdateUserDto) {
+  findOneByName(username: string) {
+    return this.usersRepository.findOneBy({ username: username });
+  }
+
+  update(user: User, updateUserDto: UpdateUserDto): Promise<User> {
     user.username =
       updateUserDto.username !== undefined
         ? updateUserDto.username
@@ -38,7 +42,7 @@ export class UsersService {
     return this.usersRepository.save(user);
   }
 
-  remove(user: User) {
+  remove(user: User): Promise<User> {
     return this.usersRepository.remove(user);
   }
 }
