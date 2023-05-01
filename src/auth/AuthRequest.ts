@@ -1,4 +1,3 @@
-
 export class AuthRequest extends Request {
   user: {
     username: string;

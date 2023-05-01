@@ -6,10 +6,7 @@ import { Timer } from './entities/timer.entity';
 import { UsersModule } from '../users/users.module';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([Timer]),
-    UsersModule,
-  ],
+  imports: [TypeOrmModule.forFeature([Timer]), UsersModule],
   controllers: [TimerController],
   providers: [TimerService],
 })

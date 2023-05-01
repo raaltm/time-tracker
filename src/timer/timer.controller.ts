@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Req, Param, Patch, Query, ValidationPipe, UsePipes } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, Query, Req, UsePipes, ValidationPipe } from '@nestjs/common';
 import { TimerService } from './timer.service';
 import { StartTimerDto } from './dto/start-timer.dto';
 import { UsersService } from '../users/users.service';

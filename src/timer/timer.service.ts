@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { StartTimerDto } from './dto/start-timer.dto';
-import { EndTimerDto } from './dto/end-timer.dto';
 import { User } from '../users/entities/user.entity';
 import { Timer } from './entities/timer.entity';
 import { InjectRepository } from '@nestjs/typeorm';
